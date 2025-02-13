@@ -21,14 +21,14 @@ Run the following command in the terminal to start the Hadoop cluster using Dock
 ```bash
 docker-compose up -d
 ```
-3. Build the Java Code with Maven**
+3. Build the Java Code with Maven
 
 ```bash
 mvn clean install
 ```
 This command compiles and packages the project into a JAR file.
 
-4. Prepare Input Data Files**
+4. Prepare Input Data Files
 
 Ensure that `movie_dialogues.txt` is available in the `input/` directory.
 
@@ -36,7 +36,7 @@ Ensure that `movie_dialogues.txt` is available in the `input/` directory.
   5.1 Move JAR File
 
 ```bash
-docker cp target/movie-script-analysis.jar resourcemanager:/opt/hadoop-3.2.1/share/hadoop/mapreduce/
+docker cp target/hands-on2-movie-script-analysis-1.0-SNAPSHOT.jar resourcemanager:/opt/hadoop-3.2.1/share/hadoop/mapreduce/
 ```
 
   5.2 Move Input File
@@ -72,7 +72,7 @@ cd /opt/hadoop-3.2.1/share/hadoop/mapreduce/
 8. Execute the MapReduce Job
 
   ```bash
-  hadoop jar movie-script-analysis.jar com.movie.script.analysis.MovieScriptAnalysis /input/movie_scripts/movie_dialogues.txt /output
+  hadoop jar hands-on2-movie-script-analysis-1.0-SNAPSHOT.jar com.movie.script.analysis.MovieScriptAnalysis /input/movie_scripts/movie_dialogues.txt /output
   ```
 
 9. Retrieve Output Results
